@@ -1,0 +1,33 @@
+{
+  "name": "cs_steam_mirror",
+  "version": "1.0.0",
+  "description": "Steam CS API Mirror",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "swagger": "node_modules/.bin/swagger project start cs-collection",
+    "swagger-editor": "node_modules/.bin/swagger project edit cs-collection",
+    "init_db": "node_modules/.bin/migrate",
+    "init_swagger": "cd cs-collection && npm i",
+    "init": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rfist/cs_steam_mirror.git"
+  },
+  "author": "rfist",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rfist/cs_steam_mirror/issues"
+  },
+  "homepage": "https://github.com/rfist/cs_steam_mirror#readme",
+  "dependencies": {
+    "got": "^8.0.1",
+    "migrate": "^1.1.0",
+    "mysql": "^2.15.0",
+    "ramda": "^0.25.0",
+    "swagger": "^0.7.5",
+    "swagger-editor": "^3.2.1",
+    "swagger-tools": "^0.10.3"
+  }
+}

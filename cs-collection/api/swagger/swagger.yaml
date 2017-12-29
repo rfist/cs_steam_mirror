@@ -1,0 +1,72 @@
+swagger: "2.0"
+info:
+  version: "0.0.1"
+  title: CS Items Price Mirror
+host: localhost:10010
+basePath: /
+schemes:
+  - http
+  - https
+consumes:
+  - application/json
+produces:
+  - application/json
+  - text/plain
+paths:
+  /all:
+    x-swagger-router-controller: prices
+    get:
+      description: Returns list of all items with their prices
+      operationId: all
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/AllItemsResponse"
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /get:
+    x-swagger-router-controller: prices
+    get:
+      description: Search and return prices by item name
+      operationId: get
+      parameters:
+        - name: name
+          in: query
+          description: The name of the item to display it's prices
+          required: false
+          type: string
+      responses:
+        "200":
+          description: Success
+          schema:
+            $ref: "#/definitions/ItemResponse"
+        "204":
+          description: Not found
+        default:
+          description: Error
+          schema:
+            $ref: "#/definitions/ErrorResponse"
+  /swagger:
+    x-swagger-pipe: swagger_raw
+definitions:
+  AllItemsResponse:
+    type: array
+    items:
+      $ref: '#/definitions/ItemResponse'
+  ItemResponse:
+    properties:
+      name:
+        type: string
+      safe_price:
+        type: integer
+      safe_net_price:
+        type: integer
+  ErrorResponse:
+    required:
+      - message
+    properties:
+      message:
+        type: string

@@ -1,0 +1,9 @@
+# Created by .ignore support plugin (hsz.mobi)
+env.js
+node_modules
+.idea
+*.iml
+.migrate
+package-lock.json
+mock
+
