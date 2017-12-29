@@ -26,7 +26,7 @@ All available commands can be looked at [API page](http://localhost:10010/docs/#
 
 [List of all items](http://localhost:10010/all)
 
-[Searh item "Chroma Case" ](http://localhost:10010/get?name=Chroma%202%20Case)
+[Item "Chroma Case" ](http://localhost:10010/get?name=Chroma%202%20Case)
 
 
 
